@@ -127,7 +127,6 @@ color: white
       <property name="styleSheet">
        <string notr="true">QTextEdit{
 border: 3px solid #FF9100;
-padding: 100px;
 }</string>
       </property>
       <property name="inputMethodHints">

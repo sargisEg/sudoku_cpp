@@ -27,7 +27,20 @@ void ScoresWindow::initData()
     for (int i = 0; i < players.size(); ++i) {
         ui->tableWidget->setItem(i, 0, new QTableWidgetItem(players[i].getName()));
         ui->tableWidget->setItem(i, 1, new QTableWidgetItem(players[i].getDifficluty()));
-        ui->tableWidget->setItem(i, 2, new QTableWidgetItem(players[i].getTime()));
+        auto timeStr = players[i].getTime();
+        long time = timeStr.toLong();
+        int sec = time / 1000;
+        int min = sec / 60;
+        sec = sec - (min * 60);
+        int mil = time % 1000;
+        QString msg;
+        if (min < 10)
+            msg.append("0");
+        msg.append(QString::number(min)).append(":");
+        if (sec < 10)
+            msg.append("0");
+        msg.append(QString::number(sec)).append(".").append(QString::number(mil));
+        ui->tableWidget->setItem(i, 2, new QTableWidgetItem(msg));
     }
 }
 

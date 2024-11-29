@@ -20,4 +20,6 @@ private:
     QSqlDatabase db;
 };
 
+
+
 #endif // DBHELPER_H

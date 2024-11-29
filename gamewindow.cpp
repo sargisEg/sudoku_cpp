@@ -257,7 +257,6 @@ void GameWindow::writeInDb(QString time) {
 
     DbHelper dbHelper;
     dbHelper.addRecord(name, diffName, time);
-
 }
 
 int GameWindow::getRandomNumber()
